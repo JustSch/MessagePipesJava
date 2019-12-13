@@ -15,24 +15,37 @@ public class ConnectionMain {
 	static private PipedInputStream pis3;
 	static private PipedOutputStream pos3;
 	
+	static private PipedInputStream pis4;
+	static private PipedOutputStream pos4;
+	
 	static private ObjectOutputStream oos;
+	static private ObjectOutputStream oos2;
 	static private ObjectInputStream ois;
 	static private ObjectInputStream ois2;
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Pipe setup");
-
+		
 		try {
 			pos1 = new PipedOutputStream();
 			pis1 = new PipedInputStream(pos1);
+			
 			pos2 = new PipedOutputStream();
 			pis2 = new PipedInputStream(pos2);
 			
-			TA ta = new TA(pis1, pos1,ois,oos);
-			TB tb = new TB(pis2, pos2,ois2,oos);
-			TC tc = new TC(oos);
+			pos3 = new PipedOutputStream();
+			pis3 = new PipedInputStream(pos3);
+			
+			pos4 = new PipedOutputStream();
+			pis4 = new PipedInputStream(pos4);
+			
+			TA ta = new TA(pis1, pos1,ois,pis3);
+			TB tb = new TB(pis2, pos2,ois2,pis4);
+			TC tc = new TC(oos,oos2,pos3,pos4);
+			
+			ta.start();
+			tb.start();
+			tc.start();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
