@@ -4,14 +4,17 @@ import java.io.ObjectOutputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
-public class ConnectionManager {
+public class ConnectionMain {
 
 	static private PipedInputStream pis1;
 	static private PipedOutputStream pos1;
 
 	static private PipedInputStream pis2;
 	static private PipedOutputStream pos2;
-
+	
+	static private PipedInputStream pis3;
+	static private PipedOutputStream pos3;
+	
 	static private ObjectOutputStream oos;
 	static private ObjectInputStream ois;
 	static private ObjectInputStream ois2;
