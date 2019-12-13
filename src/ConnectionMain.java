@@ -23,20 +23,20 @@ public class ConnectionMain {
 	static private ObjectInputStream ois;
 	static private ObjectInputStream ois2;
 	
-
+	//based on connectionmanager, message, sender, receiver code on website
 	public static void main(String[] args) {
 		
 		try {
-			pos1 = new PipedOutputStream();  //pipes to send from and receive to TA
+			pos1 = new PipedOutputStream();  //pipes to send from and receive from TA
 			pis1 = new PipedInputStream(pos1);
 			
-			pos2 = new PipedOutputStream();    //pipes to send from and receive to TB
+			pos2 = new PipedOutputStream();    //pipes to send from and receive from TB
 			pis2 = new PipedInputStream(pos2);
 			
-			pos3 = new PipedOutputStream();  //pipes to send from and receive to TC
+			pos3 = new PipedOutputStream();  //pipes to send from and receive from TC
 			pis3 = new PipedInputStream(pos3);
 			
-			pos4 = new PipedOutputStream();  //pipes to send from and receive to TC
+			pos4 = new PipedOutputStream();  //pipes to send from and receive from TC
 			pis4 = new PipedInputStream(pos4);
 			
 			TA ta = new TA(pis2, pos1,ois,pis3);
