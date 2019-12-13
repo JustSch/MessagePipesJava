@@ -31,8 +31,7 @@ public class TA extends Thread {
 			Message m;
 			try {
 				m = (Message) ois.readObject();
-				System.out.println("TA receives: ");
-				System.out.println(m);
+				System.out.println("TA receives: "+m);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
