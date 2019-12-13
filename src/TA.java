@@ -11,7 +11,6 @@ public class TA extends Thread {
 	private InputStream pis1;
 	private OutputStream pos1;
 	private ObjectInputStream ois;
-	private ObjectOutputStream oos;
 	private InputStream pis3;
 
 	public TA(InputStream pis1, OutputStream pos1, ObjectInputStream ois, InputStream pis3) {
