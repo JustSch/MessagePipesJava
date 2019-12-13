@@ -11,7 +11,6 @@ public class TC extends Thread{
 	private OutputStream pos4;
 	
 	public TC(ObjectOutputStream oos, ObjectOutputStream oos2, OutputStream pos3, OutputStream pos4) {
-		// TODO Auto-generated constructor stub
 		this.oos = oos;
 		this.oos2 = oos2;
 		this.pos3 = pos3;
@@ -19,19 +18,18 @@ public class TC extends Thread{
 	}
 
 	public void run() {
-		Message m = new Message(3,3);
+		Message m = new Message(3,3);  
 		
 		System.out.println( "TC sends: " );
         System.out.println( m );
         
         try {
-			oos = new ObjectOutputStream( pos3 );
+			oos = new ObjectOutputStream( pos3 );  //sends object to TA
 			oos.writeObject( m );
 			
-			oos2 = new ObjectOutputStream(pos4);
+			oos2 = new ObjectOutputStream(pos4);  //send object to TB
 			oos2.writeObject(m);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         

@@ -3,7 +3,7 @@ import java.io.Serializable;
 class Message implements Serializable {
 	public int number, id;
 
-	public Message(int number, int id) {
+	public Message(int number, int id) {  //similar to message class of dimu
 		this.number = number;
 		this.id = id;
 	}
