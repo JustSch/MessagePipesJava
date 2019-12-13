@@ -20,7 +20,6 @@ public class TA extends Thread {
 		this.pos1 = pos1;
 		this.ois = ois;
 		this.pis3 = pis3;
-		this.oos = oos;
 	}
 
 	public void run() {
